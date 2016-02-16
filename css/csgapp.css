@@ -1,0 +1,40 @@
+﻿@media screen and ( max-width: 991px ) {
+    .container-fluid {
+        padding: 0px;
+    }
+
+    #myCarousel {
+        top: 51px;
+    }
+}
+
+@media screen and ( min-width: 992px ) {
+    .menustyle {
+        padding: 0px;
+    }
+}
+
+@media screen and ( max-width: 1199px ) {
+}
+
+@media screen and ( min-width: 1200px ) {
+    #menucollapse {
+        padding-left: 0px;
+    }
+
+    .leftpaddingtozero {
+        padding-left: 0px;
+    }
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+}
+
+.contentstyle {
+    padding: 0px;
+}
+
+.container-fluid {
+}

@@ -7,90 +7,250 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
     <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
     <style>
+        /* Small screen mode */
         @media screen and ( max-width: 991px ) {
-            #myCarousel {
-                top: 51px;
-            }
-
             .navbar-brand {
                 padding: 1px 15px;
             }
 
                 .navbar-brand > img {
+                    /* Logo */
+                    /* Kipróbálni, hogy tényleg ide kell-e, nem inkább globálba!!! */
                     height: 46px;
                 }
+
+            .tab-pane {
+                /* Felső menüsor vastagságával együtt kell változtatni */
+                padding-top: 51px;
+            }
+
+            .skipScript {
+                position: fixed;
+                right: 0;
+                left: 0;
+                z-index: 1030;
+                top: 0;
+                border-width: 0 0 1px;
+            }
         }
 
+        /* Big screen mode */
         @media screen and ( min-width: 992px ) {
             .fixed {
-                width: 150px;
                 float: left;
             }
 
-            .carousel {
-                margin-left: 150px;
-            }
-
-            .slide {
-                margin-left: 150px;
-            }
-
             .navbar-brand {
-                padding-top: 5px;
+                padding-top: 50px;
                 transform: translateX(-50%);
                 left: 50%;
                 position: absolute;
             }
 
             #menucollapse {
-                padding-top: 50px;
+                padding-top: 150px;
+            }
+
+            .skipScript {
+                position: fixed;
+                float: left;
+                /* Navbar height (100%-20px should be, if there's no border rounding, can be 100%, unless it's not pretty) */
+                /* Oldalmenü magasságának beállítása (100%-20px kéne, ha nincs lekerekítve az oldalmenü kerete, akkor lehet 100%, máskülönben nem szép) */
+                /* Mert a teteje le van kerekítve, az alsó lekerekítés pedig nem látszik */
+                /* height: 100%; */
+                /* Navbar width */
+                /* Oldalmenü szélességének beállítása */
+                width: 160px;
+                /* Navbar border color */
+                /* Menü keret színe */
+                border-color: aqua;
+                /* Navbar border rounding */
+                /* Menü sarkainak lekerekítése */
+                border-radius: 0px;
+                /* Navbar border thickness */
+                /* Menü keret vastagsága */
+                border-width: 0px;
+            }
+
+            .tab-content {
+                /* Oldalmenü szélességével együtt kell állítani */
+                margin-left: 160px;
             }
         }
+
+        /* Sticky footer */
+        /* Ragadós lábléc */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 20px; /* 60px */
+            /* Page background */
+            /* Oldal hátterének színe */
+            background: #525252;
+            /* Lehet háttér képet is lehet tenni, azt máshogy kell */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20px; /* 60px */
+            /* Footer background color */
+            /* Lábléc hátterének színe */
+            background-color: #444;
+            /* Footer text color */
+            /* Lábléc szövegének színe */
+            color: #eee;
+        }
+
+        .footertext {
+            margin: 0;
+        }
+
+        /* Sticky footer end */
 
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
             width: 100%;
+            max-height: 100%;
         }
+
+        .carousel {
+            max-height: inherit;
+            overflow: hidden;
+        }
+
+        .item img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Carouser slider Arrow */
+        .glyphicon {
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            z-index: 5;
+            display: inline-block;
+            margin-top: -10px;
+            /* Carouser slider Arrow size */
+            /* Kép lapozó navigációs nyíl ikonjainak mérete */
+            font-size: 30px;
+            /* Carouser slider Arrow color */
+            /* Kép lapozó navigációs nyíl ikonjainak színe */
+            color: white;
+            /* :hover??? */
+        }
+
+        .left .glyphicon {
+            left: 50%;
+            margin-left: -10px;
+        }
+
+        .right .glyphicon {
+            right: 50%;
+            margin-right: -10px;
+        }
+
+        /* On carousel-control hover change the color of the arrows */
+        /* Képlapozó vezérlői fölé vitt egér esetén változzanak a nyilak színei */
+        .carousel-control:hover > .glyphicon {
+            color: white;
+        }
+
+        .navbar {
+            /* Menu bar background color */
+            /* Menü háttérszíne */
+            background-color: #525252;
+        }
+
+        #menucollapse > ul > li.active > a {
+            /* Active menu item */
+            /* Kiválasztott menüelem színei */
+            background-color: #525252;
+            color: white;
+        }
+
+            #menucollapse > ul > li.active > a:hover {
+                /* Active menu item hover */
+                /* Kiválasztott menüelem színei, ha felette van az egér */
+                background-color: #525252;
+                color: #bbb;
+            }
+
+        #menucollapse > ul > li > a {
+            /* Not active menu items */
+            /* Menü elemek színei */
+            background-color: #525252;
+            color: white;
+        }
+
+            #menucollapse > ul > li > a:hover {
+                /* Not active menu items */
+                /* Menü elemek színei, ha felette van az egér */
+                background-color: #525252;
+                color: #bbb;
+            }
+
+        #menuButton {
+            padding-right: 30px;
+            padding-top: 10px;
+            font-size: 30px;
+            color: white;
+        }
+
+        #menuButton:hover {
+            padding-right: 30px;
+            padding-top: 10px;
+            font-size: 30px;
+            color: white;
+            text-decoration-style: none;
+        }
+
+        .carousel-inner > .item > img {
+            height: inherit;
+            width: auto;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="row-fluid">
         <div class="fixed">
-            <nav class="navbar navbar-default" role="navigation" style="background-color: #525252">
+            <nav class="navbar navbar-default skipScript" role="navigation">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#"><img alt="logo" src="./logo.jpg" /></a>
 
-
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menucollapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                    <a id="menuButton" class="pull-right" data-toggle="collapse" data-target="#menucollapse">
+                        MENÜ
+                    </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="menucollapse">
                     <ul class="nav navbar-nav nav-pills nav-stacked pull-right">
-                        <li>
-                            <a href="#" class="pull-right">
+                        <li class="active">
+                            <a href="#home" class="pull-right" data-toggle="tab" onclick="hideMenu()">
                                 <div class="container-fluid">Főoldal</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="pull-right">
+                            <a href="#menu1" class="pull-right" data-toggle="tab" onclick="hideMenu()">
                                 <div class="container-fluid">Képek</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="pull-right">
+                            <a href="#menu2" class="pull-right" data-toggle="tab" onclick="hideMenu()">
                                 <div class="container-fluid">Kapcsolat</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="pull-right">
+                            <a href="#menu3" class="pull-right" data-toggle="tab" onclick="hideMenu()">
                                 <div class="container-fluid">Magamról</div>
                             </a>
                         </li>
@@ -100,37 +260,97 @@
         </div>
 
         <div class="span8">
-            <div id="myCarousel" class="carousel slide">
+            <div class="tab-content">
 
-                <!-- Carousel indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+                <div id="home" class="tab-pane fade in active">
+                    <div id="myCarousel" class="carousel slide">
 
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="./slider/slide1.png" alt="First slide">
-                    </div>
+                        <!-- Carousel indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                            <li data-target="#myCarousel" data-slide-to="5"></li>
+                            <li data-target="#myCarousel" data-slide-to="6"></li>
+                            <li data-target="#myCarousel" data-slide-to="7"></li>
+                        </ol>
 
-                    <div class="item">
-                        <img src="./slider/slide2.png" alt="Second slide">
-                    </div>
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="./slider/01.jpg" alt="First slide">
+                            </div>
 
-                    <div class="item">
-                        <img src="./slider/slide3.png" alt="Third slide">
+                            <div class="item">
+                                <img src="./slider/02.jpg" alt="Second slide">
+                            </div>
+
+                            <div class="item">
+                                <img src="./slider/03.jpg" alt="Third slide">
+                            </div>
+
+                            <div class="item">
+                                <img src="./slider/04.jpg" alt="Third slide">
+                            </div>
+
+                            <div class="item">
+                                <img src="./slider/05.jpg" alt="Third slide">
+                            </div>
+
+                            <div class="item">
+                                <img src="./slider/06.jpg" alt="Third slide">
+                            </div>
+
+                            <div class="item">
+                                <img src="./slider/07.jpg" alt="Third slide">
+                            </div>
+
+                            <div class="item">
+                                <img src="./slider/08.jpg" alt="Third slide">
+                            </div>
+                        </div>
+
+                        <!-- Carousel nav -->
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-arrow-left" style="display: block;"></span>
+                        </a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+
                     </div>
                 </div>
 
-                <!-- Carousel nav -->
-                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+                <div id="menu1" class="tab-pane fade">
+                    <div class="container-fluid">
+                        <h1>Oldal2</h1>
+                    </div>
+                </div>
+
+
+                <div id="menu2" class="tab-pane fade">
+                    <div class="container-fluid">
+                        <h1>Oldal3</h1>
+                    </div>
+                </div>
+
+
+                <div id="menu3" class="tab-pane fade">
+                    <div class="container-fluid">
+                        <h1>Oldal4</h1>
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="container-fluid pull-right"><p class="footertext">&copy; Sebény Péter</p></div>
+    </footer>
 
     <script>
         $(document).ready(setNavbarClass());
@@ -147,11 +367,17 @@
 
         function setNavbarClass() {
             if (window.innerWidth < 992) {
-                $("nav").addClass("navbar-fixed-top");
+                $("#myCarousel").height(window.innerHeight - 71);
+                $("#menuButton").show();
             } else {
-                $("nav").removeClass("navbar-fixed-top");
+                $("#myCarousel").height(window.innerHeight - 20);
+                $("#menuButton").hide();
             }
 
+        }
+
+        function hideMenu() {
+            $("#menuButton").click();
         }
     </script>
 
