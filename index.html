@@ -12,18 +12,17 @@
         /* Small screen mode */
         @media screen and ( max-width: 991px ) {
             .navbar-brand {
-                padding: 1px 15px;
+                padding: 10px 15px;
             }
 
                 .navbar-brand > img {
                     /* Logo */
-                    /* Kipróbálni, hogy tényleg ide kell-e, nem inkább globálba!!! */
                     height: 46px;
                 }
 
             .tab-pane {
                 /* Felső menüsor vastagságával együtt kell változtatni */
-                padding-top: 51px;
+                padding-top: 61px;
             }
 
             .skipScript {
@@ -48,6 +47,11 @@
                 left: 50%;
                 position: absolute;
             }
+
+                .navbar-brand > img {
+                    /* Logo */
+                    height: 80px;
+                }
 
             #menucollapse {
                 padding-top: 150px;
@@ -117,7 +121,7 @@
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
             width: 100%;
-            max-height: 100%;
+            height: auto;
         }
 
         .carousel {
@@ -212,9 +216,12 @@
             text-decoration-style: none;
         }
 
-        .carousel-inner > .item > img {
+        /*.carousel-inner > .item > img {
             height: inherit;
             width: auto;
+        }*/
+        .carousel-inner img {
+            margin: auto;
         }
 
     </style>
@@ -225,10 +232,10 @@
         <div class="fixed">
             <nav class="navbar navbar-default skipScript" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><img alt="logo" src="./logo.jpg" /></a>
+                    <a class="navbar-brand" href="#home"><img alt="logo" src="./logo.jpg" onclick="hideMenu()"/></a>
 
-                    <a id="menuButton" class="pull-right" data-toggle="collapse" data-target="#menucollapse">
-                        MENÜ
+                    <a id="menuButton" class="pull-right btn" data-toggle="collapse" data-target="#menucollapse">
+                        <p>MENÜ</p>
                     </a>
                 </div>
 
@@ -241,17 +248,22 @@
                         </li>
                         <li>
                             <a href="#menu1" class="pull-right" data-toggle="tab" onclick="hideMenu()">
-                                <div class="container-fluid">Képek</div>
+                                <div class="container-fluid">Bemutatkozás</div>
                             </a>
                         </li>
                         <li>
                             <a href="#menu2" class="pull-right" data-toggle="tab" onclick="hideMenu()">
-                                <div class="container-fluid">Kapcsolat</div>
+                                <div class="container-fluid">Képek</div>
                             </a>
                         </li>
                         <li>
                             <a href="#menu3" class="pull-right" data-toggle="tab" onclick="hideMenu()">
-                                <div class="container-fluid">Magamról</div>
+                                <div class="container-fluid">Kapcsolat</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/cserifoto" target="_blank" class="pull-right" onclick="hideMenu()">
+                                <div class="container-fluid">Facebook</div>
                             </a>
                         </li>
                     </ul>
@@ -353,6 +365,7 @@
     </footer>
 
     <script>
+
         $(document).ready(setNavbarClass());
 
         // Latency on resize, wait 50ms after resizing to run the method.
@@ -366,11 +379,52 @@
         $(window).resize(setNavbarClass);
 
         function setNavbarClass() {
+            var element = $(".carousel-inner .active img");
             if (window.innerWidth < 992) {
-                $("#myCarousel").height(window.innerHeight - 71);
+                var neededHeight = window.innerHeight - 81;
+                var actualHeight = element.height();
+                var scale = neededHeight / actualHeight;
+
+                // scale down the screen (shrinking)
+                if (element.height() > neededHeight) {
+                    element.height(neededHeight);
+                    element.width(element.width() * scale);
+                }
+
+                // scale up the screen
+                if (actualHeight < neededHeight && element.width() < $("#myCarousel").width()) {
+                    if ((neededHeight - actualHeight) < ($("#myCarousel").width() - element.width())) {
+                        element.height(actualHeight * scale);
+                        element.width(element.width() * scale);
+                    } else {
+
+                    }
+                }
+                
+                $("#myCarousel").height(neededHeight);
                 $("#menuButton").show();
             } else {
-                $("#myCarousel").height(window.innerHeight - 20);
+                var neededHeight = window.innerHeight - 20;
+                var actualHeight = element.height();
+                var scale = neededHeight / actualHeight;
+                
+                // scale down the screen (shrinking)
+                if (element.height() > neededHeight) {
+                    element.height(neededHeight);
+                    element.width(element.width() * scale);
+                }
+
+                // scale up the screen
+                if (actualHeight < neededHeight && element.width() < $("#myCarousel").width()) {
+                    if ((neededHeight - actualHeight) < ($("#myCarousel").width() - element.width())) {
+                        element.height(actualHeight * scale);
+                        element.width(element.width() * scale);
+                    } else {
+
+                    }
+                }
+
+                $("#myCarousel").height(neededHeight);
                 $("#menuButton").hide();
             }
 
