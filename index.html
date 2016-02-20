@@ -8,6 +8,7 @@
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.js"></script>
+
     <style>
         /* Small screen mode */
         @media screen and ( max-width: 991px ) {
@@ -149,7 +150,6 @@
             /* Carouser slider Arrow color */
             /* Kép lapozó navigációs nyíl ikonjainak színe */
             color: white;
-            /* :hover??? */
         }
 
         .left .glyphicon {
@@ -186,6 +186,7 @@
                 color: white;
                 font-size: 20px;
                 left: -10px;
+                cursor: pointer;
             }
 
         .navbar {
@@ -237,11 +238,6 @@
                 text-decoration-style: none;
             }
 
-        /*.carousel-inner > .item > img {
-            height: inherit;
-            width: auto;
-        }*/
-
         .carousel-inner img {
             margin: auto;
         }
@@ -253,7 +249,7 @@
         <div class="fixed">
             <nav class="navbar navbar-default skipScript" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#home"><img alt="logo" src="./logo.jpg" onclick="hideMenu()" /></a>
+                    <a class="navbar-brand" href="#home"><img alt="logo" src="./logo.jpg"/></a> 
 
                     <a id="menuButton" class="pull-right btn" data-toggle="collapse" data-target="#menucollapse">
                         MENÜ
@@ -263,27 +259,27 @@
                 <div class="collapse navbar-collapse" id="menucollapse">
                     <ul class="nav navbar-nav nav-pills nav-stacked pull-right">
                         <li class="active">
-                            <a href="#home" class="pull-right" data-toggle="tab" onclick="hideMenu()">
+                            <a href="#home" class="pull-right" data-toggle="tab">
                                 <div class="container-fluid">Főoldal</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#menu1" class="pull-right" data-toggle="tab" onclick="hideMenu()">
+                            <a href="#menu1" class="pull-right" data-toggle="tab">
                                 <div class="container-fluid">Bemutatkozás</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#menu2" class="pull-right" data-toggle="tab" onclick="hideMenu()">
+                            <a href="#menu2" class="pull-right" data-toggle="tab">
                                 <div class="container-fluid">Képek</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#menu3" class="pull-right" data-toggle="tab" onclick="hideMenu()">
+                            <a href="#menu3" class="pull-right" data-toggle="tab">
                                 <div class="container-fluid">Kapcsolat</div>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/cserifoto" target="_blank" class="pull-right" onclick="hideMenu()">
+                            <a href="https://www.facebook.com/cserifoto" target="_blank" class="pull-right">
                                 <div class="container-fluid">Facebook oldalam</div>
                             </a>
                         </li>
@@ -293,7 +289,7 @@
         </div>
 
         <div class="span8">
-            <div class="tab-content">
+            <div id="myTabs" class="tab-content">
 
                 <div id="home" class="tab-pane fade in active">
                     <div id="myCarousel" class="carousel slide">
@@ -347,20 +343,10 @@
 
                         <!-- Carousel nav -->
                         <a class="carousel-control left myCarouselControl" href="#myCarousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-arrow-left"></span>
-                            <span class="glyphicon glyphicon-chevron-left" style="padding-top: 30px;"></span>
-                            <span class="glyphicon glyphicon-hand-left" style="padding-top: 60px;"></span>
-                            <span class="glyphicon glyphicon-circle-arrow-left" style="padding-top: 90px;"></span>
-                            <span class="glyphicon glyphicon-triangle-left" style="padding-top: 120px;"></span>
-                            <span class="glyphicon glyphicon-menu-left" style="padding-top: 150px;"></span>
+                            <span class="glyphicon glyphicon-chevron-left"></span>
                         </a>
                         <a class="carousel-control right myCarouselControl" href="#myCarousel" data-slide="next">
-                            <span class="glyphicon glyphicon-arrow-right"></span>
-                            <span class="glyphicon glyphicon-chevron-right" style="padding-top: 30px;"></span>
-                            <span class="glyphicon glyphicon-hand-right" style="padding-top: 60px;"></span>
-                            <span class="glyphicon glyphicon-circle-arrow-right" style="padding-top: 90px;"></span>
-                            <span class="glyphicon glyphicon-triangle-right" style="padding-top: 120px;"></span>
-                            <span class="glyphicon glyphicon-menu-right" style="padding-top: 150px;"></span>
+                            <span class="glyphicon glyphicon-chevron-right"></span>
                         </a>
 
                         <div id="carouselButtons" class="myPPButtons">
@@ -410,25 +396,31 @@
                 pause: "false"
             });
 
-            function flip() {
-                var showed = $(".myPPButton .show");
-                var hidden = $(".myPPButton .hidden");
-                showed.hide();
-                hidden.show();
-            }
-
             $('#playButton').click(function () {
                 $('#myCarousel').carousel('cycle');
-                //flip();
                 $("#pauseButton").removeClass("hidden");
                 $("#playButton").addClass("hidden");
             });
 
             $('#pauseButton').click(function () {
                 $('#myCarousel').carousel('pause');
-                //flip();
                 $("#playButton").removeClass("hidden");
                 $("#pauseButton").addClass("hidden");
+            });
+
+            $(".navbar-brand").click(function () {
+                if (($(".navbar-collapse").hasClass("in")) && (window.innerWidth < 992)) {
+                    hideMenu();
+                }
+                $('#menucollapse a[href="#home"]').tab('show');
+            });
+
+            $("#menucollapse a").each(function () {
+                $(this).click(function () {
+                    if (($(".navbar-collapse").hasClass("in")) && (window.innerWidth < 992)) {
+                        hideMenu();
+                    }
+                });
             });
         });
 
@@ -467,51 +459,42 @@
         function setAll(element) {
 
             if (window.innerWidth < 992) {
-
-                var originalHeight = element.prop("naturalHeight");
-                var originalWidth = element.prop("naturalWidth");
                 var neededHeight = window.innerHeight - 81;
                 var neededWidth = window.innerWidth;
-                var scale;
-                var scaleX = neededWidth / originalWidth;
-                var scaleY = neededHeight / originalHeight;
-                
-                if (scaleX < scaleY) {
-                    scale = scaleX;
-                } else {
-                    scale = scaleY;
-                }
 
-                if (scale != undefined) { // && scale != 1
-                    element.height(originalHeight * scale);
-                    element.width(originalWidth * scale);
-                }
+                doCalculations(element, neededHeight, neededWidth);
 
                 $("#myCarousel").height(neededHeight);
                 $("#menuButton").show();
             } else {
-
-                var originalHeight = element.prop("naturalHeight");
-                var originalWidth = element.prop("naturalWidth");
                 var neededHeight = window.innerHeight - 21;
                 var neededWidth = window.innerWidth - 161;
-                var scale;
-                var scaleX = neededWidth / originalWidth;
-                var scaleY = neededHeight / originalHeight;
-                
-                if (scaleX < scaleY) {
-                    scale = scaleX;
-                } else {
-                    scale = scaleY;
-                }
 
-                if (scale != undefined) { // && scale != 1
-                    element.height(originalHeight * scale);
-                    element.width(originalWidth * scale);
-                }
+                doCalculations(element, neededHeight, neededWidth);
 
                 $("#myCarousel").height(neededHeight);
                 $("#menuButton").hide();
+            }
+        }
+
+        function doCalculations(element, pHeight, pWidth) {
+            var originalHeight = element.prop("naturalHeight");
+            var originalWidth = element.prop("naturalWidth");
+            var neededHeight = pHeight;
+            var neededWidth = pWidth;
+            var scale;
+            var scaleX = neededWidth / originalWidth;
+            var scaleY = neededHeight / originalHeight;
+
+            if (scaleX < scaleY) {
+                scale = scaleX;
+            } else {
+                scale = scaleY;
+            }
+
+            if (scale != undefined) {
+                element.height(originalHeight * scale);
+                element.width(originalWidth * scale);
             }
         }
 
