@@ -18,6 +18,7 @@
                 width: 35%;
             }
         }
+
         /* Xs screens */
         @media screen and ( max-width: 767px ) and ( min-width: 501px ) {
             /* Introducrion image */
@@ -40,8 +41,8 @@
 
         /* Small screen mode */
         @media screen and ( max-width: 991px ) {
-            /* Introduction top padding */
-            #menu1 > div {
+            /* Introduction, Connections top padding */
+            #menu1 > div, #menu3 > div {
                 padding-top: 10px;
             }
 
@@ -74,8 +75,8 @@
         }
         /* Big screen mode */
         @media screen and ( min-width: 992px ) {
-            /* Introduction top padding */
-            #menu1 > div {
+            /* Introduction, Connections top padding */
+            #menu1 > div, #menu3 > div {
                 padding-top: 79px;
             }
 
@@ -285,9 +286,13 @@
             margin: auto;
         }
 
-        /* Introduction text */
-        #menu1 p {
+        /* Introduction, Connections text */
+        #menu1 p, #menu3 p {
             color: white;
+        }
+
+        #emf-container-outer {
+            background-color: #2d2d30;
         }
     </style>
 </head>
@@ -435,7 +440,30 @@ Amit vállalok:<br />
 
                 <div id="menu3" class="tab-pane fade">
                     <div class="container-fluid">
-                        <h1>Oldal4</h1>
+                        <p>
+                            Tel.: +421 903 848 700<br />
+                            E-mail: cserigabor.foto@gmail.com<br />
+                            Továbbá a Facebook oldalamon is küldhet üzenetet.
+                        </p>
+                        <div>
+                            <div>
+                                <iframe width="100%" height="568" allowTransparency="true" frameborder="0" scrolling="no" src="http://www.emailmeform.com/builder/embed/cibpbcNhOgAeKvo9q9Wc">
+                                    <a href="http://www.emailmeform.com/builder/embed/cibpbcNhOgAeKvo9q9Wc">Fill out form.</a>
+                                </iframe>
+                                <div style="margin-top:18px;text-align:center">
+                                    <div id='emf_advertisement'>
+                                        <font face="Verdana" size="2" color="#000000">Powered by</font>
+                                        <span style="position: relative; padding-left: 3px; bottom: -5px;">
+                                            <img style="vertical-align: unset;" src="http://assets.emailmeform.com/images/footer-logo.png?RU1GLTAyLTI3" />
+                                        </span>
+                                        <font face="Verdana" size="2" color="#000000">EMF </font>
+                                        <a style="text-decoration:none;" href="http://www.emailmeform.com/" target="_blank">
+                                            <font face="Verdana" size="2" color="#000000">Online Form</font>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
