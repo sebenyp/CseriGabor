@@ -10,8 +10,41 @@
     <script src="./js/bootstrap.js"></script>
 
     <style>
+        @media screen and ( max-width: 500px ) {
+            /* Introducrion image */
+            #menu1 img {
+                float: left;
+                margin-right:10px;
+                width: 35%;
+            }
+        }
+        /* Xs screens */
+        @media screen and ( max-width: 767px ) and ( min-width: 501px ) {
+            /* Introducrion image */
+            #menu1 img {
+                float: left;
+                margin-right:10px;
+                width: 25%;
+            }
+        }
+
+        /* Above xs screens */
+        @media screen and ( min-width: 768px ) {
+            /* Introducrion image */
+            #menu1 img {
+                float: left;
+                margin-right:10px;
+                width: 20%;
+            }
+        }
+
         /* Small screen mode */
         @media screen and ( max-width: 991px ) {
+            /* Introduction top padding */
+            #menu1 > div {
+                padding-top: 10px;
+            }
+
             .navbar-brand {
                 padding: 10px 15px;
             }
@@ -41,6 +74,11 @@
         }
         /* Big screen mode */
         @media screen and ( min-width: 992px ) {
+            /* Introduction top padding */
+            #menu1 > div {
+                padding-top: 79px;
+            }
+
             .fixed {
                 float: left;
             }
@@ -168,10 +206,15 @@
             color: white;
         }
 
+        /* Carousel circles */
+        .carousel-indicators {
+            bottom: 0;
+        }
+
         /* Carousel play/pause button */
         .myPPButtons {
             position: absolute;
-            bottom: 0px;
+            bottom: 30px;
             left: 50%;
             z-index: 15;
             margin: 1px;
@@ -240,6 +283,11 @@
 
         .carousel-inner img {
             margin: auto;
+        }
+
+        /* Introduction text */
+        #menu1 p {
+            color: white;
         }
     </style>
 </head>
@@ -364,7 +412,16 @@
 
                 <div id="menu1" class="tab-pane fade">
                     <div class="container-fluid">
-                        <h1>Oldal2</h1>
+                        <img  src="./introduction/csgfoto.jpg" />
+                        <p class="col-sm-9">Üdvözlöm.<br />
+A nevem Cseri Gábor. 2012 volt az év amikor fényképezőgépet ragadtam és elkezdtem fotózni. Kezdetben csak hobbi fotós voltam, magamnak fotóztam főleg természeti képeket készítettem.2014 végén határoztam el, hogy szeretnék komolyabban is foglalkozni a fotózással. Ezen elhatározás eredményeképpen 2015-ben a fotózás számos területén igyekeztem fejleszteni magamat és a felszerelésemet is bővítettem. Amíg hobbi szinten fotóztam addig azt gondoltam, hogy fotózni egyszerű dolog csak meg kell nyomni a gombot és kész. Kezdő szinten ez valóban igaz, de profibb szinten már nem. Igazából csak akkor értettem meg, hogy egy összetett dologról van szó, amikor komolyabban kezdtem belemenni a fotózásba, sok részterülete és összetevője van fotózásnak. Azt gondolom, hogy szép képet készíteni könnyű, de ahhoz hogy az ember gyönyörű képeket készítsen ahhoz már több kell egy kezdő lelkesedésénél. Szeretek és igyekszem gyönyörű képeket készíteni. Ipolynyéken lakom, ami Balassagyarmattól és Ipolyságtól 20 km-re található, Budapesttől pedig 104 km-re. Ennek értelmében Ipolynyék, Balassagyarmat,Szécsény, Ipolyság, Nagy Kürtös vonzáskörzetében és Budapest területén vállalok fotózást.<br />
+<br />
+Amit vállalok:<br />
+- esküvő és jegyes fotózás<br />
+- portré és modell fotózás<br />
+- család, baba-mama,pocak és gyerek fotózás<br />
+- kreatív fotózás
+                        </p>
                     </div>
                 </div>
 
