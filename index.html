@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Cseri Gábor fotográfiája -  Fotós Balassagyarmat Budapest</title>
@@ -14,33 +14,35 @@
             /* Introducrion image */
             #menu1 img {
                 float: left;
-                margin-right:10px;
+                margin-right: 10px;
                 width: 35%;
             }
         }
-
         /* Xs screens */
         @media screen and ( max-width: 767px ) and ( min-width: 501px ) {
             /* Introducrion image */
             #menu1 img {
                 float: left;
-                margin-right:10px;
+                margin-right: 10px;
                 width: 25%;
             }
         }
-
         /* Above xs screens */
         @media screen and ( min-width: 768px ) {
             /* Introducrion image */
             #menu1 img {
                 float: left;
-                margin-right:10px;
+                margin-right: 10px;
                 width: 20%;
             }
         }
-
         /* Small screen mode */
         @media screen and ( max-width: 991px ) {
+            /* Form items widths */
+            #name, #mail, #message {
+                width: 100%;
+            }
+
             /* Introduction, Connections top padding */
             #menu1 > div, #menu3 > div {
                 padding-top: 10px;
@@ -73,8 +75,14 @@
                 border: none;
             }
         }
+
         /* Big screen mode */
         @media screen and ( min-width: 992px ) {
+            /* Form items widths */
+            #name, #mail, #message {
+                width: 80%;
+            }
+
             /* Introduction, Connections top padding */
             #menu1 > div, #menu3 > div {
                 padding-top: 79px;
@@ -158,7 +166,6 @@
             margin: 0;
         }
         /* Sticky footer end */
-
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
             width: 100%;
@@ -174,7 +181,6 @@
             width: 100%;
             height: auto;
         }
-
         /* Carouser slider Arrow */
         .myCarouselControl .glyphicon {
             position: absolute;
@@ -200,18 +206,15 @@
             right: 50%;
             margin-right: -10px;
         }
-
         /* On carousel-control hover change the color of the arrows */
         /* Képlapozó vezérlői fölé vitt egér esetén változzanak a nyilak színei */
         .carousel-control:hover > .glyphicon {
             color: white;
         }
-
         /* Carousel circles */
         .carousel-indicators {
             bottom: 0;
         }
-
         /* Carousel play/pause button */
         .myPPButtons {
             position: absolute;
@@ -285,14 +288,20 @@
         .carousel-inner img {
             margin: auto;
         }
-
         /* Introduction, Connections text */
-        #menu1 p, #menu3 p {
+        #menu1 p, #menu3 {
             color: white;
         }
 
-        #emf-container-outer {
-            background-color: #2d2d30;
+        /* Input elements color */
+        input#name.form-control,
+        input#mail.form-control,
+        textarea#message.form-control,
+        button#sendBtn.form-control.btn-block,
+        button#resetBtn.form-control.btn-block {
+            background-color: #202023;
+            color: white;
+            border-color: #202023;
         }
     </style>
 </head>
@@ -302,7 +311,7 @@
         <div class="fixed">
             <nav class="navbar navbar-default skipScript" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#home"><img alt="logo" src="./logo.jpg"/></a> 
+                    <a class="navbar-brand" href="#home"><img alt="logo" src="./logo.jpg" /></a>
 
                     <a id="menuButton" class="pull-right btn" data-toggle="collapse" data-target="#menucollapse">
                         MENÜ
@@ -417,15 +426,16 @@
 
                 <div id="menu1" class="tab-pane fade">
                     <div class="container-fluid">
-                        <img  src="./introduction/csgfoto.jpg" />
-                        <p class="col-sm-9">Üdvözlöm.<br />
-A nevem Cseri Gábor. 2012 volt az év amikor fényképezőgépet ragadtam és elkezdtem fotózni. Kezdetben csak hobbi fotós voltam, magamnak fotóztam főleg természeti képeket készítettem.2014 végén határoztam el, hogy szeretnék komolyabban is foglalkozni a fotózással. Ezen elhatározás eredményeképpen 2015-ben a fotózás számos területén igyekeztem fejleszteni magamat és a felszerelésemet is bővítettem. Amíg hobbi szinten fotóztam addig azt gondoltam, hogy fotózni egyszerű dolog csak meg kell nyomni a gombot és kész. Kezdő szinten ez valóban igaz, de profibb szinten már nem. Igazából csak akkor értettem meg, hogy egy összetett dologról van szó, amikor komolyabban kezdtem belemenni a fotózásba, sok részterülete és összetevője van fotózásnak. Azt gondolom, hogy szép képet készíteni könnyű, de ahhoz hogy az ember gyönyörű képeket készítsen ahhoz már több kell egy kezdő lelkesedésénél. Szeretek és igyekszem gyönyörű képeket készíteni. Ipolynyéken lakom, ami Balassagyarmattól és Ipolyságtól 20 km-re található, Budapesttől pedig 104 km-re. Ennek értelmében Ipolynyék, Balassagyarmat,Szécsény, Ipolyság, Nagy Kürtös vonzáskörzetében és Budapest területén vállalok fotózást.<br />
-<br />
-Amit vállalok:<br />
-- esküvő és jegyes fotózás<br />
-- portré és modell fotózás<br />
-- család, baba-mama,pocak és gyerek fotózás<br />
-- kreatív fotózás
+                        <img src="./introduction/csgfoto.jpg" />
+                        <p class="col-sm-9">
+                            Üdvözlöm.<br />
+                            A nevem Cseri Gábor. 2012 volt az év amikor fényképezőgépet ragadtam és elkezdtem fotózni. Kezdetben csak hobbi fotós voltam, magamnak fotóztam főleg természeti képeket készítettem.2014 végén határoztam el, hogy szeretnék komolyabban is foglalkozni a fotózással. Ezen elhatározás eredményeképpen 2015-ben a fotózás számos területén igyekeztem fejleszteni magamat és a felszerelésemet is bővítettem. Amíg hobbi szinten fotóztam addig azt gondoltam, hogy fotózni egyszerű dolog csak meg kell nyomni a gombot és kész. Kezdő szinten ez valóban igaz, de profibb szinten már nem. Igazából csak akkor értettem meg, hogy egy összetett dologról van szó, amikor komolyabban kezdtem belemenni a fotózásba, sok részterülete és összetevője van fotózásnak. Azt gondolom, hogy szép képet készíteni könnyű, de ahhoz hogy az ember gyönyörű képeket készítsen ahhoz már több kell egy kezdő lelkesedésénél. Szeretek és igyekszem gyönyörű képeket készíteni. Ipolynyéken lakom, ami Balassagyarmattól és Ipolyságtól 20 km-re található, Budapesttől pedig 104 km-re. Ennek értelmében Ipolynyék, Balassagyarmat,Szécsény, Ipolyság, Nagy Kürtös vonzáskörzetében és Budapest területén vállalok fotózást.<br />
+                            <br />
+                            Amit vállalok:<br />
+                            - esküvő és jegyes fotózás<br />
+                            - portré és modell fotózás<br />
+                            - család, baba-mama,pocak és gyerek fotózás<br />
+                            - kreatív fotózás
                         </p>
                     </div>
                 </div>
@@ -447,7 +457,19 @@ Amit vállalok:<br />
                         </p>
                         <div>
                             <div>
-                                <iframe width="100%" height="568" allowTransparency="true" frameborder="0" scrolling="no" src="http://www.emailmeform.com/builder/embed/cibpbcNhOgAeKvo9q9Wc">
+                                <h3 style="color: white;">Üzenetküldés a weboldalról</h3>
+                                <form id="form" action="http://formspree.io/peter.sebeny@capsys.hu" method="post">
+                                    Az Ön neve:<br />
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="pl.: Jóska Pista"><br>
+                                    Az Ön e-mail címe:<br />
+                                    <input type="email" class="form-control" id="mail" name="email" placeholder="pl.: joska.pista@gmail.com"><br>
+                                    Üzenet:<br />
+                                    <textarea class="form-control" id="message" name="message" placeholder="Ide írhatja az üzenetét" cols="50" rows="7"> </textarea><br /><br />
+                                    <button type="submit" class="form-control btn-block" id="sendBtn" style="width: 200px;">Küld</button>
+                                    <button type="reset" class="form-control btn-block" id="resetBtn" style="width: 200px;">Törlés</button>
+                                </form>
+
+                                <!--<iframe width="100%" height="568" allowTransparency="true" frameborder="0" scrolling="no" src="http://www.emailmeform.com/builder/embed/cibpbcNhOgAeKvo9q9Wc">
                                     <a href="http://www.emailmeform.com/builder/embed/cibpbcNhOgAeKvo9q9Wc">Fill out form.</a>
                                 </iframe>
                                 <div style="margin-top:18px;text-align:center">
@@ -461,7 +483,7 @@ Amit vállalok:<br />
                                             <font face="Verdana" size="2" color="#000000">Online Form</font>
                                         </a>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
@@ -476,30 +498,27 @@ Amit vállalok:<br />
     </footer>
 
     <script>
+
         $(function () {
             $('#myCarousel').carousel({
                 pause: "false"
             });
-
             $('#playButton').click(function () {
                 $('#myCarousel').carousel('cycle');
                 $("#pauseButton").removeClass("hidden");
                 $("#playButton").addClass("hidden");
             });
-
             $('#pauseButton').click(function () {
                 $('#myCarousel').carousel('pause');
                 $("#playButton").removeClass("hidden");
                 $("#pauseButton").addClass("hidden");
             });
-
             $(".navbar-brand").click(function () {
                 if (($(".navbar-collapse").hasClass("in")) && (window.innerWidth < 992)) {
                     hideMenu();
                 }
                 $('#menucollapse a[href="#home"]').tab('show');
             });
-
             $("#menucollapse a").each(function () {
                 $(this).click(function () {
                     if (($(".navbar-collapse").hasClass("in")) && (window.innerWidth < 992)) {
@@ -508,11 +527,9 @@ Amit vállalok:<br />
                 });
             });
         });
-
         $('#myCarousel').bind('slide.bs.carousel', function (e) {
             doOnScreenChange();
         });
-
         $(document).ready(doOnScreenChange());
         // Latency on resize, wait 50ms after resizing to run the method.
         $(window).resize(function () {
@@ -521,9 +538,7 @@ Amit vállalok:<br />
                 doOnScreenChange();
             }, 50);
         });
-
         $(window).resize(doOnScreenChange);
-
         function doOnNext(type) {
             var element;
             if (type == "next") {
@@ -531,37 +546,27 @@ Amit vállalok:<br />
             } else {
                 element = $(".carousel-inner .prev img");
             }
-
             setAll(element);
         }
-
         function doOnScreenChange() {
             var element = $(".carousel-inner .active img");
-
             setAll(element);
         }
-
         function setAll(element) {
-
             if (window.innerWidth < 992) {
                 var neededHeight = window.innerHeight - 81;
                 var neededWidth = window.innerWidth;
-
                 doCalculations(element, neededHeight, neededWidth);
-
                 $("#myCarousel").height(neededHeight);
                 $("#menuButton").show();
             } else {
                 var neededHeight = window.innerHeight - 21;
                 var neededWidth = window.innerWidth - 161;
-
                 doCalculations(element, neededHeight, neededWidth);
-
                 $("#myCarousel").height(neededHeight);
                 $("#menuButton").hide();
             }
         }
-
         function doCalculations(element, pHeight, pWidth) {
             var originalHeight = element.prop("naturalHeight");
             var originalWidth = element.prop("naturalWidth");
@@ -570,19 +575,16 @@ Amit vállalok:<br />
             var scale;
             var scaleX = neededWidth / originalWidth;
             var scaleY = neededHeight / originalHeight;
-
             if (scaleX < scaleY) {
                 scale = scaleX;
             } else {
                 scale = scaleY;
             }
-
             if (scale != undefined) {
                 element.height(originalHeight * scale);
                 element.width(originalWidth * scale);
             }
         }
-
         function hideMenu() {
             // if class contains "in", theoretically it doesn't need, but it's possible in future developement
             $("#menuButton").click();
