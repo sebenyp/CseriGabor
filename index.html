@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
     <title>Cseri Gábor fotográfiája -  Fotós Balassagyarmat Budapest</title>
@@ -43,7 +43,6 @@
             #name, #email, #message {
                 width: 100%;
             }
-
             /* Introduction, Connections top padding */
             #menu1 > div, #menu3 > div {
                 padding-top: 10px;
@@ -76,14 +75,12 @@
                 border: none;
             }
         }
-
         /* Big screen mode */
         @media screen and ( min-width: 992px ) {
             /* Form items widths */
             #name, #email, #message {
                 width: 80%;
             }
-
             /* Introduction, Connections top padding */
             #menu1 > div, #menu3 > div {
                 padding-top: 79px;
@@ -294,19 +291,23 @@
             color: white;
         }
 
-        #menu3 p {
-            text-align: center;
-        }
-
+            #menu3 p {
+                text-align: center;
+            }
         /* Input elements color */
         input#name.form-control,
         input#email.form-control,
         textarea#message.form-control,
         button#sendBtn.form-control.btn-block,
         button#resetBtn.form-control.btn-block {
-            background-color: #202023;
+            background-color: #1e1e1f;
             color: white;
             border-color: #202023;
+            resize: none;
+        }
+
+        .constantBtnWidth {
+            width: 200px;
         }
     </style>
 </head>
@@ -480,8 +481,8 @@
                                     <input type="email" class="form-control" id="email" name="email" placeholder="pl.: joska.pista@gmail.com"><br>
                                     Üzenet:<br />
                                     <textarea class="form-control" id="message" name="message" placeholder="Ide írhatja az üzenetét" cols="50" rows="7"></textarea><br /><br />
-                                    <button type="submit" class="form-control btn-block" id="sendBtn" style="width: 200px;">Küld</button>
-                                    <button type="reset" class="form-control btn-block" id="resetBtn" style="width: 200px;">Törlés</button>
+                                    <button type="submit" class="form-control btn-block constantBtnWidth" id="sendBtn">Küld</button>
+                                    <button type="reset" class="form-control btn-block constantBtnWidth" id="resetBtn">Törlés</button>
                                 </form>
 
                                 <!--<iframe width="100%" height="568" allowTransparency="true" frameborder="0" scrolling="no" src="http://www.emailmeform.com/builder/embed/cibpbcNhOgAeKvo9q9Wc">
@@ -514,6 +515,45 @@
 
     <script>
 
+        $(document).ready(function () {
+            doOnScreenChange();
+            doImagesLoad();
+        });
+        // Gallery starts here
+
+        //var dir = "images/";
+        //var fileextension = ".jpg";
+        //$.ajax({
+        //    //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+        //    url: dir,
+        //    success: function (data) {
+        //        //List all .png file names in the page
+        //        $(data).find("a:contains(" + fileextension + ")").each(function () {
+        //            var filename = this.href.replace(window.location.host, "").replace("http://", "");
+        //            $("body").append("<img src='" + dir + filename + "'>");
+        //        });
+        //    }
+        //});
+
+        function doImagesLoad() {
+            var folder = "images/";
+            $.ajax({
+                url: folder,
+                success: function (data) {
+                    $(data).find("a").attr("href", function (i, val) {
+                        if (val.match(/\.(jpe?g|png|gif)$/)) {
+                            $("body").append("<img src='" + folder + val + "'>");
+                        }
+                    });
+                }
+            });
+        }
+
+        
+
+        //End of Gallery
+
+        // Optimalizáéni kicsit!
         $(function () {
             $('#myCarousel').carousel({
                 pause: "false"
@@ -545,7 +585,6 @@
         $('#myCarousel').bind('slide.bs.carousel', function (e) {
             doOnScreenChange();
         });
-        $(document).ready(doOnScreenChange());
         // Latency on resize, wait 50ms after resizing to run the method.
         $(window).resize(function () {
             clearTimeout(window.resizedFinished);
@@ -553,7 +592,8 @@
                 doOnScreenChange();
             }, 50);
         });
-        $(window).resize(doOnScreenChange);
+        // Ez kell ide?
+        // $(window).resize(doOnScreenChange);
         function doOnNext(type) {
             var element;
             if (type == "next") {
@@ -571,15 +611,15 @@
             if (window.innerWidth < 992) {
                 var neededHeight = window.innerHeight - 81;
                 var neededWidth = window.innerWidth;
-                doCalculations(element, neededHeight, neededWidth);
                 $("#myCarousel").height(neededHeight);
                 $("#menuButton").show();
+                doCalculations(element, neededHeight, neededWidth);
             } else {
                 var neededHeight = window.innerHeight - 21;
                 var neededWidth = window.innerWidth - 161;
-                doCalculations(element, neededHeight, neededWidth);
                 $("#myCarousel").height(neededHeight);
                 $("#menuButton").hide();
+                doCalculations(element, neededHeight, neededWidth);
             }
         }
         function doCalculations(element, pHeight, pWidth) {
