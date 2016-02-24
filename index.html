@@ -16,10 +16,10 @@
                 float: left;
                 margin-right: 10px;
                 width: 35%;
-                border-radius: 5px;
-                box-shadow: #1e1e1f 3px 3px;
+                border-radius: 10px;
             }
         }
+
         /* Xs screens */
         @media screen and ( max-width: 767px ) and ( min-width: 501px ) {
             /* Introducrion image */
@@ -27,10 +27,9 @@
                 float: left;
                 margin-right: 10px;
                 width: 25%;
-                border-radius: 10px;
-                box-shadow: #1e1e1f 4px 4px;
             }
         }
+
         /* Above xs screens */
         @media screen and ( min-width: 768px ) {
             /* Introducrion image */
@@ -38,10 +37,9 @@
                 float: left;
                 margin-right: 10px;
                 width: 20%;
-                border-radius: 20px;
-                box-shadow: #1e1e1f 5px 5px;
             }
         }
+
         /* Small screen mode */
         @media screen and ( max-width: 991px ) {
             /* Form items widths */
@@ -80,16 +78,12 @@
                 border: none;
             }
         }
+
         /* Big screen mode */
         @media screen and ( min-width: 992px ) {
             /* Form items widths */
             #name, #email, #message {
                 width: 80%;
-            }
-
-            /* Introduction padding extra */
-            .introduction_padding {
-                padding: 0px 10%;
             }
             /* Introduction, Connections top padding */
             #menu1 > div, #menu3 > div {
@@ -128,7 +122,7 @@
                 width: 160px;
                 /* Navbar border color */
                 /* Menü keret színe */
-                border-color: aqua;
+                border-color: aqua; /* Nincs keret, ezért nem látszik a kék szín */
                 /* Navbar border rounding */
                 /* Menü sarkainak lekerekítése */
                 border-radius: 0px;
@@ -142,6 +136,7 @@
                 margin-left: 160px;
             }
         }
+
         /* Sticky footer */
         /* Ragadós lábléc */
         html {
@@ -173,6 +168,7 @@
         .footertext {
             margin: 0;
         }
+
         /* Sticky footer end */
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
@@ -189,6 +185,7 @@
             width: 100%;
             height: auto;
         }
+
         /* Carouser slider Arrow */
         .myCarouselControl .glyphicon {
             position: absolute;
@@ -214,15 +211,18 @@
             right: 50%;
             margin-right: -10px;
         }
+
         /* On carousel-control hover change the color of the arrows */
         /* Képlapozó vezérlői fölé vitt egér esetén változzanak a nyilak színei */
         .carousel-control:hover > .glyphicon {
             color: white;
         }
+
         /* Carousel circles */
         .carousel-indicators {
             bottom: 0;
         }
+
         /* Carousel play/pause button */
         .myPPButtons {
             position: absolute;
@@ -324,12 +324,41 @@
 
         /* Gallery styles */
 
-        .thumbnail {
-            background-color: #2d2d30;
-            border-color: #2d2d30;
+        /* Gallery viewer starts */
+
+        #imgViewContainer {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            display: none;
         }
 
-        /* Solution 1 */
+        #imageViewer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            max-height: 100%;
+            max-width: 100%;
+            padding: 5%;
+        }
+
+        /* End of gallery viewer */
+
+        /* Thumbnail color */
+        /*.thumbnail {
+            background-color: #2d2d30;
+            border-color: #2d2d30;
+        }*/
+
+        /* Attempt 1 */
         /*#menu2 a {
             height: 200px;
             width: auto;
@@ -354,8 +383,8 @@
             align-items: center;
         }*/
 
-        /* Solution 2 */
-        .thumbnail_container {
+        /* Attempt 2 */
+        /*.thumbnail_container {
             position: relative;
             width: 100%;
             padding-bottom: 100%;
@@ -377,10 +406,9 @@
                 margin: auto;
                 max-height: 100%;
                 max-width: 100%;
-            }
+            }*/
 
-        /* Solution 3 ??? */
-
+        /* Attempt 3 ??? */
         /*.v_align_all {
             white-space: nowrap;
         }
@@ -408,6 +436,99 @@
             max-height: 100%;
             position: relative;
         }*/
+
+        /* Attempt 4 */
+        /*#menu2 a {
+            height: 200px;
+            max-height: 100%;
+            width: auto;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        #menu2 img {
+            max-height: 100%;
+            position: relative;
+        }
+
+        .vcenter {
+            display: grid;
+            vertical-align: middle;
+            float: none;
+        }*/
+
+        /* Attempt 5 */
+        /*.thumbnail {
+            margin: 10px 0 10px 0;
+            padding: 0;
+            background-color: #2d2d30;
+            border-color: #2d2d30;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            position: inherit;
+        }
+
+        .img-thumbnail {
+            background-color: #2d2d30;
+            padding: 0;
+            border: none;
+            max-height: 200px;
+        }*/
+
+        /* Attempt 6 */
+        @media screen and ( min-width: 768px ) {
+            .thumbnail_container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 100%;
+                margin: 10px 0 10px 0;
+            }
+
+            .thumbnail {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                margin: 10px 0 10px 0;
+                padding: 0;
+                background-color: #2d2d30;
+                border-color: #2d2d30;
+            }
+
+            .img-thumbnail {
+                background-color: #2d2d30;
+                padding: 0;
+                border: none;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media screen and ( max-width: 767px ) {
+            .thumbnail {
+                margin: 10px 0 10px 0;
+                padding: 0;
+                background-color: #2d2d30;
+                border-color: #2d2d30;
+            }
+
+            .img-thumbnail {
+                background-color: #2d2d30;
+                padding: 0;
+                border: none;
+                max-height: 400px;
+            }
+
+            #imageViewer {
+                padding: 0;
+            }
+        }
     </style>
 
     <!--[if lt IE 9]>
@@ -546,18 +667,17 @@
 
 
                 <div id="menu1" class="tab-pane fade">
-                    <div class="container-fluid introduction_padding">
-                        <img src="./introduction/csgfoto.jpg"/>
+                    <div class="container-fluid">
+                        <img src="./introduction/csgfoto.jpg" style="border-radius: 20px; box-shadow: #1e1e1f 5px 5px" />
                         <p class="col-sm-9">
                             Üdvözlöm.<br />
-                            A nevem Cseri Gábor. 2012 volt az év amikor fényképezőgépet ragadtam és elkezdtem fotózni. Kezdetben csak hobbi fotós voltam, magamnak fotóztam főleg természeti képeket készítettem.2014 végén határoztam el, hogy szeretnék komolyabban is foglalkozni a fotózással. Ezen elhatározás eredményeképpen 2015-ben a fotózás számos területén igyekeztem fejleszteni magamat és a felszerelésemet is bővítettem. Amíg hobbi szinten fotóztam addig azt gondoltam, hogy fotózni egyszerű dolog csak meg kell nyomni a gombot és kész. Kezdő szinten ez valóban igaz, de profibb szinten már nem. Igazából csak akkor értettem meg, hogy egy összetett dologról van szó, amikor komolyabban kezdtem belemenni a fotózásba, sok részterülete és összetevője van fotózásnak. Azt gondolom, hogy szép képet készíteni könnyű, de ahhoz hogy az ember gyönyörű képeket készítsen ahhoz már több kell egy kezdő lelkesedésénél. Szeretek és igyekszem gyönyörű képeket készíteni. Ipolynyéken lakom, ami Balassagyarmattól és Ipolyságtól 20 km-re található, Budapesttől pedig 104 km-re. Ennek értelmében Ipolynyék, Balassagyarmat,Szécsény, Ipolyság, Nagy Kürtös vonzáskörzetében és Budapest területén vállalok fotózást. Ettől eltérően más területeken is lehet róla szó, megbeszélés kérdése.<br />
+                            A nevem Cseri Gábor. 2012 volt az év amikor fényképezőgépet ragadtam és elkezdtem fotózni. Kezdetben csak hobbi fotós voltam, magamnak fotóztam főleg természeti képeket készítettem.2014 végén határoztam el, hogy szeretnék komolyabban is foglalkozni a fotózással. Ezen elhatározás eredményeképpen 2015-ben a fotózás számos területén igyekeztem fejleszteni magamat és a felszerelésemet is bővítettem. Amíg hobbi szinten fotóztam addig azt gondoltam, hogy fotózni egyszerű dolog csak meg kell nyomni a gombot és kész. Kezdő szinten ez valóban igaz, de profibb szinten már nem. Igazából csak akkor értettem meg, hogy egy összetett dologról van szó, amikor komolyabban kezdtem belemenni a fotózásba, sok részterülete és összetevője van fotózásnak. Azt gondolom, hogy szép képet készíteni könnyű, de ahhoz hogy az ember gyönyörű képeket készítsen ahhoz már több kell egy kezdő lelkesedésénél. Szeretek és igyekszem gyönyörű képeket készíteni. Ipolynyéken lakom, ami Balassagyarmattól és Ipolyságtól 20 km-re található, Budapesttől pedig 104 km-re. Ennek értelmében Ipolynyék, Balassagyarmat,Szécsény, Ipolyság, Nagy Kürtös vonzáskörzetében és Budapest területén vállalok fotózást.<br />
                             <br />
                             <b>Amit vállalok:</b><br />
                             - esküvő és jegyes fotózás<br />
                             - portré és modell fotózás<br />
                             - család, baba-mama,pocak és gyerek fotózás<br />
-                            - kreatív fotózás<br />
-                            - rendezvény, esemény fotózás (keresztelő,ballagás,bál,stb.)
+                            - kreatív fotózás
                         </p>
                     </div>
                 </div>
@@ -566,245 +686,219 @@
                 <div id="menu2" class="tab-pane fade">
                     <div class="container-fluid">
                         <div class="row">
+
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/01.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/01.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/02.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/02.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/03.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/03.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/04.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/04.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/05.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/05.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/06.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/06.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/07.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/07.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/08.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/08.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/09.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/09.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/10.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/10.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/11.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/11.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/12.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/12.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/13.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/13.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/14.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/14.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/15.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/15.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/16.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/16.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/17.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/17.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/18.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/18.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/19.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/19.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/20.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/20.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/21.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/21.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/22.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/22.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/23.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/23.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/24.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/24.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/25.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/25.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/26.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/26.jpg" />
                                     </a>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                <div href="#" class="thumbnail_container">
-                                    <a class="thumbnail v_align_all">
-                                        <img src="./images/27.jpg" />
-                                        <span class="v_align_fix"></span>
+                                <div class="thumbnail_container">
+                                    <a class="thumbnail">
+                                        <img class="img-thumbnail viewable" src="./images/27.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -863,17 +957,15 @@
         <div class="container-fluid pull-right"><p class="footertext">&copy; Sebény Péter</p></div>
     </footer>
 
+    <div id="imgViewContainer">
+        <img id="imageViewer" src="" />
+    </div>
+
     <script>
 
         $(document).ready(function () {
             doOnScreenChange();
         });
-
-        // Gallery starts here
-
-
-
-        //End of Gallery
 
         // Optimalizáéni kicsit!
         $(function () {
@@ -966,6 +1058,23 @@
             // if class contains "in", theoretically it doesn't need, but it's possible in future developement
             $("#menuButton").click();
         }
+
+        // Gallery starts here
+
+        $('#imgViewContainer').css('height', window.innerWidth + 'px');
+        //for when you click on an image
+        $('.viewable').click(function () {
+            $("#imgViewContainer").height(window.innerHeight);
+            var src = $(this).attr('src'); //get the source attribute of the clicked image
+            $('#imageViewer').attr('src', src); //assign it to the tag for your fullscreen div
+            $('#imgViewContainer').fadeIn();
+        });
+        $('#imgViewContainer').click(function () {
+            $(this).fadeOut(); //this will hide the fullscreen div if you click away from the image.
+        });
+
+        //End of Gallery
+
     </script>
 
 </body>
