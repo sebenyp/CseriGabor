@@ -16,7 +16,8 @@
                 float: left;
                 margin-right: 10px;
                 width: 35%;
-                border-radius: 10px;
+                border-radius: 5px;
+                box-shadow: #1e1e1f 3px 3px;
             }
         }
 
@@ -27,6 +28,8 @@
                 float: left;
                 margin-right: 10px;
                 width: 25%;
+                border-radius: 10px;
+                box-shadow: #1e1e1f 4px 4px;
             }
         }
 
@@ -37,6 +40,13 @@
                 float: left;
                 margin-right: 10px;
                 width: 20%;
+                border-radius: 20px;
+                box-shadow: #1e1e1f 5px 5px;
+            }
+
+            /* Introduction padding extra */
+            .introduction_padding {
+                padding: 0px 10%;
             }
         }
 
@@ -46,6 +56,7 @@
             #name, #email, #message {
                 width: 100%;
             }
+
             /* Introduction, Connections top padding */
             #menu1 > div, #menu3 > div {
                 padding-top: 10px;
@@ -122,7 +133,7 @@
                 width: 160px;
                 /* Navbar border color */
                 /* Menü keret színe */
-                border-color: aqua; /* Nincs keret, ezért nem látszik a kék szín */
+                border-color: aqua;
                 /* Navbar border rounding */
                 /* Menü sarkainak lekerekítése */
                 border-radius: 0px;
@@ -529,6 +540,14 @@
                 padding: 0;
             }
         }
+
+        .imagesComment {
+            color: white;
+            text-align: center;
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+
     </style>
 
     <!--[if lt IE 9]>
@@ -667,17 +686,18 @@
 
 
                 <div id="menu1" class="tab-pane fade">
-                    <div class="container-fluid">
-                        <img src="./introduction/csgfoto.jpg" style="border-radius: 20px; box-shadow: #1e1e1f 5px 5px" />
+                    <div class="container-fluid introduction_padding">
+                        <img src="./introduction/csgfoto.jpg" />
                         <p class="col-sm-9">
                             Üdvözlöm.<br />
-                            A nevem Cseri Gábor. 2012 volt az év amikor fényképezőgépet ragadtam és elkezdtem fotózni. Kezdetben csak hobbi fotós voltam, magamnak fotóztam főleg természeti képeket készítettem.2014 végén határoztam el, hogy szeretnék komolyabban is foglalkozni a fotózással. Ezen elhatározás eredményeképpen 2015-ben a fotózás számos területén igyekeztem fejleszteni magamat és a felszerelésemet is bővítettem. Amíg hobbi szinten fotóztam addig azt gondoltam, hogy fotózni egyszerű dolog csak meg kell nyomni a gombot és kész. Kezdő szinten ez valóban igaz, de profibb szinten már nem. Igazából csak akkor értettem meg, hogy egy összetett dologról van szó, amikor komolyabban kezdtem belemenni a fotózásba, sok részterülete és összetevője van fotózásnak. Azt gondolom, hogy szép képet készíteni könnyű, de ahhoz hogy az ember gyönyörű képeket készítsen ahhoz már több kell egy kezdő lelkesedésénél. Szeretek és igyekszem gyönyörű képeket készíteni. Ipolynyéken lakom, ami Balassagyarmattól és Ipolyságtól 20 km-re található, Budapesttől pedig 104 km-re. Ennek értelmében Ipolynyék, Balassagyarmat,Szécsény, Ipolyság, Nagy Kürtös vonzáskörzetében és Budapest területén vállalok fotózást.<br />
+                            A nevem Cseri Gábor. 2012 volt az év amikor fényképezőgépet ragadtam és elkezdtem fotózni. Kezdetben csak hobbi fotós voltam, magamnak fotóztam főleg természeti képeket készítettem.2014 végén határoztam el, hogy szeretnék komolyabban is foglalkozni a fotózással. Ezen elhatározás eredményeképpen 2015-ben a fotózás számos területén igyekeztem fejleszteni magamat és a felszerelésemet is bővítettem. Amíg hobbi szinten fotóztam addig azt gondoltam, hogy fotózni egyszerű dolog csak meg kell nyomni a gombot és kész. Kezdő szinten ez valóban igaz, de profibb szinten már nem. Igazából csak akkor értettem meg, hogy egy összetett dologról van szó, amikor komolyabban kezdtem belemenni a fotózásba, sok részterülete és összetevője van fotózásnak. Azt gondolom, hogy szép képet készíteni könnyű, de ahhoz hogy az ember gyönyörű képeket készítsen ahhoz már több kell egy kezdő lelkesedésénél. Szeretek és igyekszem gyönyörű képeket készíteni. Ipolynyéken lakom, ami Balassagyarmattól és Ipolyságtól 20 km-re található, Budapesttől pedig 104 km-re. Ennek értelmében Ipolynyék, Balassagyarmat,Szécsény, Ipolyság, Nagy Kürtös vonzáskörzetében és Budapest területén vállalok fotózást. Ettől eltérően más területeken is lehet róla szó, megbeszélés kérdése.<br />
                             <br />
                             <b>Amit vállalok:</b><br />
                             - esküvő és jegyes fotózás<br />
                             - portré és modell fotózás<br />
                             - család, baba-mama,pocak és gyerek fotózás<br />
-                            - kreatív fotózás
+                            - kreatív fotózás<br />
+                            - rendezvény, esemény fotózás (keresztelő,ballagás,bál,stb.)
                         </p>
                     </div>
                 </div>
@@ -687,10 +707,12 @@
                     <div class="container-fluid">
                         <div class="row">
 
+                            <p class="imagesComment">Még több és friss képeimet megtekintheti a Facebook oldalamon.</p>
+
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/01.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/01.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -698,7 +720,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/02.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/02.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -706,7 +728,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/03.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/03.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -714,7 +736,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/04.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/04.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -722,7 +744,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/05.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/05.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -730,7 +752,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/06.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/06.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -738,7 +760,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/07.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/07.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -746,7 +768,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/08.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/08.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -754,7 +776,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/09.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/09.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -762,7 +784,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/10.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/10.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -770,7 +792,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/11.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/11.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -778,7 +800,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/12.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/12.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -786,7 +808,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/13.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/13.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -794,7 +816,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/14.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/14.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -802,7 +824,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/15.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/15.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -810,7 +832,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/16.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/16.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -818,7 +840,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/17.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/17.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -826,7 +848,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/18.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/18.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -834,7 +856,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/19.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/19.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -842,7 +864,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/20.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/20.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -850,7 +872,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/21.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/21.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -858,7 +880,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/22.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/22.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -866,7 +888,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/23.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/23.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -874,7 +896,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/24.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/24.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -882,7 +904,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/25.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/25.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -890,7 +912,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/26.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/26.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -898,7 +920,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable" src="./images/27.jpg" />
+                                        <img class="img-thumbnail viewable btn" src="./images/27.jpg" />
                                     </a>
                                 </div>
                             </div>
