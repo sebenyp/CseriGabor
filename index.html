@@ -20,7 +20,6 @@
                 box-shadow: #1e1e1f 3px 3px;
             }
         }
-
         /* Xs screens */
         @media screen and ( max-width: 767px ) and ( min-width: 501px ) {
             /* Introducrion image */
@@ -32,7 +31,6 @@
                 box-shadow: #1e1e1f 4px 4px;
             }
         }
-
         /* Above xs screens */
         @media screen and ( min-width: 768px ) {
             /* Introducrion image */
@@ -43,25 +41,20 @@
                 border-radius: 20px;
                 box-shadow: #1e1e1f 5px 5px;
             }
-
             /* Introduction padding extra */
             .introduction_padding {
                 padding: 0px 10%;
             }
         }
-
         /* Small screen mode */
         @media screen and ( max-width: 991px ) {
-
             .navbar {
                 z-index: 1;
             }
-
             /* Form items widths */
             #name, #email, #message {
                 width: 100%;
             }
-
             /* Introduction, Connections top padding */
             #menu1 > div, #menu3 > div {
                 padding-top: 10px;
@@ -94,7 +87,6 @@
                 border: none;
             }
         }
-
         /* Big screen mode */
         @media screen and ( min-width: 992px ) {
             /* Form items widths */
@@ -152,7 +144,6 @@
                 margin-left: 160px;
             }
         }
-
         /* Sticky footer */
         /* Ragadós lábléc */
         html {
@@ -184,7 +175,6 @@
         .footertext {
             margin: 0;
         }
-
         /* Sticky footer end */
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
@@ -201,7 +191,6 @@
             width: 100%;
             height: auto;
         }
-
         /* Carouser slider Arrow */
         .myCarouselControl .glyphicon {
             position: absolute;
@@ -228,18 +217,15 @@
             right: 50%;
             margin-right: -10px;
         }
-
         /* On carousel-control hover change the color of the arrows */
         /* Képlapozó vezérlői fölé vitt egér esetén változzanak a nyilak színei */
         .carousel-control:hover > .glyphicon {
             color: white;
         }
-
         /* Carousel circles position */
         .carousel-indicators {
             bottom: 0;
         }
-
         /* Carousel play/pause button */
         .myPPButtons {
             position: absolute;
@@ -314,7 +300,6 @@
         .carousel-inner img {
             margin: auto;
         }
-
         /* Introduction, Connections text */
         #menu1 p, #menu3 {
             color: white;
@@ -323,7 +308,6 @@
             #menu3 p {
                 text-align: center;
             }
-
         /* Input elements color */
         input#name.form-control,
         input#email.form-control,
@@ -339,13 +323,10 @@
         .constantBtnWidth {
             width: 200px;
         }
-
         /* Gallery styles */
-
         /* Gallery viewer starts */
-
         #imgViewContainer {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.8);
             position: fixed;
             top: 0;
             bottom: 0;
@@ -366,134 +347,9 @@
             margin: auto;
             max-height: 100%;
             max-width: 100%;
-            padding: 5%;
+            padding: 2%;
         }
-
         /* End of gallery viewer */
-
-        /* Thumbnail color */
-        /*.thumbnail {
-            background-color: #2d2d30;
-            border-color: #2d2d30;
-        }*/
-
-        /* Attempt 1 */
-        /*#menu2 a {
-            height: 200px;
-            width: auto;
-            vertical-align: middle;
-        }
-
-        #menu2 img {
-            max-height: 100%;
-            position: relative;
-        }
-
-        .thumbnail {
-            background-color: #2d2d30;
-            border-color: #2d2d30;
-            display: -webkit-flexbox;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-        }*/
-
-        /* Attempt 2 */
-        /*.thumbnail_container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%;
-            margin-bottom: 20px;
-        }
-
-        .thumbnail {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-            .thumbnail img {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-                max-height: 100%;
-                max-width: 100%;
-            }*/
-
-        /* Attempt 3 ??? */
-        /*.v_align_all {
-            white-space: nowrap;
-        }
-
-            .v_align_all > * {
-                vertical-align: middle;
-                display: inline-block !important;
-            }
-
-        .v_align_fix {
-            height: 100%;
-            vertical-align: middle;
-            display: inline-block;
-            width: 0px;
-            white-space: nowrap;
-        }
-
-        #menu2 a {
-            height: 200px;
-            width: auto;
-            vertical-align: middle;
-        }
-
-        #menu2 img {
-            max-height: 100%;
-            position: relative;
-        }*/
-
-        /* Attempt 4 */
-        /*#menu2 a {
-            height: 200px;
-            max-height: 100%;
-            width: auto;
-            vertical-align: middle;
-            position: relative;
-        }
-
-        #menu2 img {
-            max-height: 100%;
-            position: relative;
-        }
-
-        .vcenter {
-            display: grid;
-            vertical-align: middle;
-            float: none;
-        }*/
-
-        /* Attempt 5 */
-        /*.thumbnail {
-            margin: 10px 0 10px 0;
-            padding: 0;
-            background-color: #2d2d30;
-            border-color: #2d2d30;
-            max-height: 200px;
-            width: auto;
-            height: auto;
-            position: inherit;
-        }
-
-        .img-thumbnail {
-            background-color: #2d2d30;
-            padding: 0;
-            border: none;
-            max-height: 200px;
-        }*/
 
         /* Attempt 6 */
         @media screen and ( min-width: 768px ) {
@@ -556,6 +412,35 @@
             margin-top: 20px;
         }
 
+        #imageViewerLeftButton {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            color: white;
+            font-size: 30px;
+            box-shadow: none;
+            text-shadow: 0px 0px 6px #000;
+        }
+
+        #imageViewerRightButton {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            color: white;
+            font-size: 30px;
+            box-shadow: none;
+            text-shadow: 0px 0px 6px #000;
+        }
+
+        #imageViewerCloseButton {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            color: white;
+            font-size: 30px;
+            box-shadow: none;
+            text-shadow: 0px 0px 6px #000;
+        }
     </style>
 
     <!--[if lt IE 9]>
@@ -720,7 +605,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/01.jpg" />
+                                        <img id="0" class="img-thumbnail viewable btn" src="./images/01.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -728,7 +613,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/02.jpg" />
+                                        <img id="1" class="img-thumbnail viewable btn" src="./images/02.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -736,7 +621,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/03.jpg" />
+                                        <img id="2" class="img-thumbnail viewable btn" src="./images/03.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -744,7 +629,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/04.jpg" />
+                                        <img id="3" class="img-thumbnail viewable btn" src="./images/04.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -752,7 +637,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/05.jpg" />
+                                        <img id="4" class="img-thumbnail viewable btn" src="./images/05.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -760,7 +645,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/06.jpg" />
+                                        <img id="5" class="img-thumbnail viewable btn" src="./images/06.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -768,7 +653,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/07.jpg" />
+                                        <img id="6" class="img-thumbnail viewable btn" src="./images/07.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -776,7 +661,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/08.jpg" />
+                                        <img id="7" class="img-thumbnail viewable btn" src="./images/08.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -784,7 +669,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/09.jpg" />
+                                        <img id="8" class="img-thumbnail viewable btn" src="./images/09.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -792,7 +677,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/10.jpg" />
+                                        <img id="9" class="img-thumbnail viewable btn" src="./images/10.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -800,7 +685,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/11.jpg" />
+                                        <img id="10" class="img-thumbnail viewable btn" src="./images/11.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -808,7 +693,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/12.jpg" />
+                                        <img id="11" class="img-thumbnail viewable btn" src="./images/12.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -816,7 +701,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/13.jpg" />
+                                        <img id="12" class="img-thumbnail viewable btn" src="./images/13.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -824,7 +709,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/14.jpg" />
+                                        <img id="13" class="img-thumbnail viewable btn" src="./images/14.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -832,7 +717,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/15.jpg" />
+                                        <img id="14" class="img-thumbnail viewable btn" src="./images/15.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -840,7 +725,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/16.jpg" />
+                                        <img id="15" class="img-thumbnail viewable btn" src="./images/16.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -848,7 +733,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/17.jpg" />
+                                        <img id="16" class="img-thumbnail viewable btn" src="./images/17.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -856,7 +741,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/18.jpg" />
+                                        <img id="17" class="img-thumbnail viewable btn" src="./images/18.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -864,7 +749,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/19.jpg" />
+                                        <img id="18" class="img-thumbnail viewable btn" src="./images/19.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -872,7 +757,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/20.jpg" />
+                                        <img id="19" class="img-thumbnail viewable btn" src="./images/20.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -880,7 +765,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/21.jpg" />
+                                        <img id="20" class="img-thumbnail viewable btn" src="./images/21.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -888,7 +773,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/22.jpg" />
+                                        <img id="21" class="img-thumbnail viewable btn" src="./images/22.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -896,7 +781,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/23.jpg" />
+                                        <img id="22" class="img-thumbnail viewable btn" src="./images/23.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -904,7 +789,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/24.jpg" />
+                                        <img id="23" class="img-thumbnail viewable btn" src="./images/24.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -912,7 +797,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/25.jpg" />
+                                        <img id="24" class="img-thumbnail viewable btn" src="./images/25.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -920,7 +805,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/26.jpg" />
+                                        <img id="25" class="img-thumbnail viewable btn" src="./images/26.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -928,7 +813,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail_container">
                                     <a class="thumbnail">
-                                        <img class="img-thumbnail viewable btn" src="./images/27.jpg" />
+                                        <img id="26" class="img-thumbnail viewable btn" src="./images/27.jpg" />
                                     </a>
                                 </div>
                             </div>
@@ -989,14 +874,18 @@
 
     <div id="imgViewContainer">
         <img id="imageViewer" src="" />
+
+        <div id="imageViewerLeftButton" class="glyphicon glyphicon-chevron-left btn"></div>
+
+        <div id="imageViewerRightButton" class="glyphicon glyphicon-chevron-right btn"></div>
+
+        <div id="imageViewerCloseButton" class="glyphicon glyphicon-remove btn"></div>
     </div>
 
     <script>
-
         $(document).ready(function () {
             doOnScreenChange();
         });
-
         // Optimalizáéni kicsit!
         $(function () {
             $('#myCarousel').carousel({
@@ -1048,6 +937,7 @@
             setAll(element);
         }
         function doOnScreenChange() {
+            $("#imgViewContainer").height(window.innerHeight);
             var element = $(".carousel-inner .active img");
             setAll(element);
         }
@@ -1088,23 +978,63 @@
             // if class contains "in", theoretically it doesn't need, but it's possible in future developement
             $("#menuButton").click();
         }
-
         // Gallery starts here
+
+        $("#imageViewerLeftButton").click(function () {
+            var imgDb = $("#menu2 img").length;
+
+            var actualImg = $(".viewed");
+            var actualImgId = actualImg.attr("id") * 1;
+
+            var prevImgId = actualImgId - 1;
+            if (prevImgId < 0) prevImgId = imgDb - 1;
+            var prevImg = $("#" + prevImgId);
+            var prevImgSource = prevImg.attr("src");
+            // leállítani a kattintást
+            $("#imageViewer").fadeOut(200, function () {
+                actualImg.removeClass("viewed")
+                $("#imageViewer").attr("src", prevImgSource);
+                prevImg.addClass("viewed");
+            }).fadeIn(200);
+            // visszatenni a kattintást
+        });
+
+        $("#imageViewerRightButton").click(function () {
+            var imgDb = $("#menu2 img").length;
+
+            var actualImg = $(".viewed");
+            var actualImgId = actualImg.attr("id") * 1;
+
+            var prevImgId = actualImgId + 1;
+            if (prevImgId > (imgDb - 1)) prevImgId = 0;
+            var prevImg = $("#" + prevImgId);
+            var prevImgSource = prevImg.attr("src");
+
+            $("#imageViewer").fadeOut(200, function () {
+                actualImg.removeClass("viewed")
+                $("#imageViewer").attr("src", prevImgSource);
+                prevImg.addClass("viewed");
+            }).fadeIn(200);
+        });
 
         $('#imgViewContainer').css('height', window.innerWidth + 'px');
         //for when you click on an image
         $('.viewable').click(function () {
+            $(".viewed").removeClass("viewed");
+            $(this).addClass("viewed");
             $("#imgViewContainer").height(window.innerHeight);
             var src = $(this).attr('src'); //get the source attribute of the clicked image
             $('#imageViewer').attr('src', src); //assign it to the tag for your fullscreen div
             $('#imgViewContainer').fadeIn();
         });
-        $('#imgViewContainer').click(function () {
-            $(this).fadeOut(); //this will hide the fullscreen div if you click away from the image.
+        //$('#imgViewContainer').click(function () {
+        //    $(this).fadeOut(); //this will hide the fullscreen div if you click away from the image.
+        //});
+        $("#imageViewerCloseButton").click(function () {
+            $('#imgViewContainer').fadeOut();
         });
 
         //End of Gallery
-
     </script>
 
 </body>
