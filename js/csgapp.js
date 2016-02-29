@@ -69,12 +69,16 @@ function setAll(element) {
         var neededWidth = window.innerWidth;
         $("#myCarousel").height(neededHeight);
         $("#menuButton").show();
+        $("#fbButtonBigScreen").hide();
+        $("#fbButtonSmallScreen").show();
         doCalculations(element, neededHeight, neededWidth);
     } else {
         var neededHeight = window.innerHeight - 21;
         var neededWidth = window.innerWidth - 161;
         $("#myCarousel").height(neededHeight);
         $("#menuButton").hide();
+        $("#fbButtonBigScreen").show();
+        $("#fbButtonSmallScreen").hide();
         doCalculations(element, neededHeight, neededWidth);
     }
 }
